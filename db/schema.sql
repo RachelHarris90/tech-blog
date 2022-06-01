@@ -9,9 +9,10 @@ CREATE TABLE users (
     last_name TEXT NOT NULL,
 )
 
-CREATE TABLE posts (
+CREATE TABLE blog (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title TEXT NOT NULL,
+    body TEXT NOT NULL,
     FOREIGN KEY (author_user_id)
     REFERENCES users(user_id)
 )
