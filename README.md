@@ -9,6 +9,19 @@ It uses handlebars to serve the HTML from the server.
 * View existing blog posts, of different users
 * Authentication for blog posting
 
+## Demonstration
+Logging into the application (once signed up)
+![Logging in](/assets/1-login.png)
+
+Adding a new blog post
+![Adding a blog post](/assets/2-add-post.png)
+
+List of my own blog posts
+![Posted blog post](/assets/3-post-added.png)
+
+List of all blog posts, regardless of user
+![All blog posts](/assets/4-dashboard.png)
+
 ## Built with
 * Express
 * MySQL
