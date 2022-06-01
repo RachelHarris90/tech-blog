@@ -4,7 +4,7 @@ const newFormHandler = async (event) => {
   const title = document.querySelector('#blog-title').value.trim();
   const body = document.querySelector('#blog-body').value.trim();
 
-  if (name && needed_funding && description) {
+  if (title && body) {
     const response = await fetch(`/api/blogs`, {
       method: 'POST',
       body: JSON.stringify({ title, body }),
@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create blog');
+      alert('Failed to create blog post');
     }
   }
 };

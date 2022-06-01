@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     // Convert to plain objects so the data is easier to work with
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    // Pass projects data and session flag into template
+    // Pass blog post data and session flag into template
     res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Blog }],
     });
 
     const user = userData.get({ plain: true });
